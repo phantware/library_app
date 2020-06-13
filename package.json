@@ -3,14 +3,22 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "DEBUG=app nodemon app.js",
+    "lint": "eslint app.js"
   },
   "repository": "git@github.com:phantware/library_app.git",
   "author": "phantware <phantmoney2011@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "debug": "^4.1.1",
     "express": "^4.17.1",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2"
   }
 }
