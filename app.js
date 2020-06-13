@@ -19,9 +19,13 @@ app.use(
   '/js',
   express.static(path.join(__dirname, '/node_modules/jquery/dist')),
 );
+
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
+
 const port = process.env.Port || 5050;
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/index.html'));
+  res.render('index', { title: 'Jamiiu' });
 });
 app.listen(port, debug(`app running at port ${port}.`));
