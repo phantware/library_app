@@ -26,6 +26,12 @@ app.set('view engine', 'ejs');
 const port = process.env.Port || 5050;
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Jamiiu' });
+  res.render('index', {
+    nav: [
+      { link: '/books', title: 'Books' },
+      { link: '/author', title: 'Author' },
+    ],
+    title: 'Library',
+  });
 });
 app.listen(port, debug(`app running at port ${port}.`));
